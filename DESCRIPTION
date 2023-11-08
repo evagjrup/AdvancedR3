@@ -1,6 +1,7 @@
 Package: AdvancedR3
 Type: Project
 Version: 0.0.1
+Title: "Learning advanced R!"
 Imports:
     dplyr,
     fs,
@@ -15,4 +16,4 @@ Imports:
     tidyr,
     usethis
 Encoding: UTF-8
-Title: "Learning advanced R!"
+
