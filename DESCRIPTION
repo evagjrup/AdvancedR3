@@ -18,6 +18,7 @@ Imports:
 Encoding: UTF-8
 Suggests: 
     gitcreds,
-    renv
+    renv,
+    styler
 URL: https://github.com/evagjrup/AdvancedR3
 BugReports: https://github.com/evagjrup/AdvancedR3/issues
