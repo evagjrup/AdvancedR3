@@ -17,4 +17,5 @@ Imports:
     usethis
 Encoding: UTF-8
 Suggests: 
+    gitcreds,
     renv
