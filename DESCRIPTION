@@ -19,3 +19,5 @@ Encoding: UTF-8
 Suggests: 
     gitcreds,
     renv
+URL: https://github.com/evagjrup/AdvancedR3
+BugReports: https://github.com/evagjrup/AdvancedR3/issues
