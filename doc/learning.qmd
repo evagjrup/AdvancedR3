@@ -4,6 +4,10 @@ author: "Your Name"
 format: html
 execute:
   echo: true
+editor:
+    markdown: 
+      wrap: 72
+      canonical: true
 ---
 
 ## Header 1
@@ -16,4 +20,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 # Code chunk
 ```
+
+## This is purely formatted
+
+-   This is a list
+-   It is not a list but maybe it is
 
