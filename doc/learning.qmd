@@ -13,8 +13,30 @@ editor:
 ## Header 1
 
 ```{r setup}
-#| include: false
-knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+source(here::here("R/functions.R"))
+lipidomics <- read_csv(here::here("data/lipidomics.csv"))
+```
+
+## Basic statistics
+
+```{r basic stats}
+lipidomics %>%
+  group_by(metabolite) %>%
+  summarise(across(value, list(mean = mean, sd = sd))) %>%
+  mutate(across(where(is.numeric), ~ round(.x, digits = 1)))
+
+#' Descriptive stats of each metabolite
+#'
+#' @param data Lipidomics df
+#'
+#' @return A data.frame/tibble
+descriptive_stats <- function(data) {
+  data %>%
+    dplyr::group_by(metabolite) %>%
+    dplyr::summarise(dplyr::across(value, list(mean = mean, sd = sd))) %>%
+    dplyr::mutate(dplyr::across(tidyselect::where(is.numeric), ~ round(.x, digits = 1)))
+}
 ```
 
 ```{r}
@@ -25,4 +47,3 @@ knitr::opts_chunk$set(echo = TRUE)
 
 -   This is a list
 -   It is not a list but maybe it is
-
