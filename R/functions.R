@@ -22,3 +22,13 @@ plot_distributions <- function(data) {
         ggplot2::facet_wrap(ggplot2::vars(metabolite), scales = "free")
     return(metabolite_distribution_plot)
 }
+
+#' Column values to snakecase
+#'
+#' @param data lipidomics
+#'
+#' @return df
+column_values_to_snake_case <- function(data) {
+    data %>%
+        dplyr::mutate(metabolite = snakecase::to_snake_case(metabolite))
+}
