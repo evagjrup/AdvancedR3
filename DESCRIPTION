@@ -8,9 +8,11 @@ Imports:
     ggplot2,
     here,
     knitr,
+    parsnip,
     quarto,
     readr,
     readxl,
+    recipes,
     remotes,
     rmarkdown,
     snakecase,
@@ -18,7 +20,8 @@ Imports:
     tarchetypes,
     targets,
     tidyr,
-    usethis
+    usethis,
+    workflows
 Encoding: UTF-8
 Suggests: 
     gitcreds,
