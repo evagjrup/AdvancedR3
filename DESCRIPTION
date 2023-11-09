@@ -5,6 +5,7 @@ Title: "Learning advanced R!"
 Imports:
     dplyr,
     fs,
+    ggplot2,
     here,
     knitr,
     readr,

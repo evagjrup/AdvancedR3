@@ -40,7 +40,25 @@ descriptive_stats <- function(data) {
 ```
 
 ```{r}
-# Code chunk
+metabolite_distribution_plot <- ggplot(lipidomics, 
+                                       aes(x = value)) +
+    geom_histogram() +
+    facet_wrap(vars(metabolite), scales = "free")
+
+metabolite_distribution_plot
+
+#' Plot distributions
+#'
+#' @param data lipidomics data
+#'
+#' @return metabolite distribution plot
+plot_distributions <- function(data) {
+    metabolite_distribution_plot <- ggplot2::ggplot(data, 
+                                       ggplot2::aes(x = value)) +
+    ggplot2::geom_histogram() +
+    ggplot2::facet_wrap(ggplot2::vars(metabolite), scales = "free")
+    return(metabolite_distribution_plot)
+}
 ```
 
 ## This is purely formatted
