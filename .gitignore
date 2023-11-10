@@ -3,3 +3,6 @@
 .Rproj.user
 data-raw/nmr-omics/
 .Rbuildignore
+
+/.quarto/
+_site
