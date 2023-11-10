@@ -3,6 +3,7 @@ Type: Project
 Version: 0.0.1
 Title: "Learning advanced R!"
 Imports:
+    broom,
     dplyr,
     fs,
     ggplot2,

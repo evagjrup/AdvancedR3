@@ -37,11 +37,26 @@ log_reg_specs <- logistic_reg() %>%
     set_engine("glm")
 log_reg_specs
 
-lipidomics_wide <- lipidomics %>%  mutate(metabolite = snakecase::to_snake_case(metabolite)) %>% pivot_wider(names_from = metabolite, values_from = value, values_fn = mean, names_prefix = "metabolite_")
+lipidomics_wide <- lipidomics %>%  
+    column_values_to_snake_case(metabolite) %>% 
+    metabolites_to_wider()
+
 lipidomics_wide
 ```
 
 ```{r}
-lipidomics %>% 
-    column_values_to_snake_case()
+recipe_specs <- lipidomics_wide %>%
+  create_recipe_spec(metabolite_cholesterol)
+recipe_specs
+```
+
+```{r}
+create_model_workflow(
+  logistic_reg() %>%
+    set_engine("glm"),
+  lipidomics_wide %>%
+    create_recipe_spec(metabolite_cholesterol)
+) %>%
+  fit(lipidomics_wide) %>%
+  tidy_model_output()
 ```
