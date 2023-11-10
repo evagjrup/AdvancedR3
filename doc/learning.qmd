@@ -34,18 +34,28 @@ tar_read(fig_metabolite_distribution)
 
 ```{r}
 model_estimates <- tar_read(df_model_estimates)
+```
 
-plot_estimates <- function(results) 
-{model_estimates %>% 
-    ggplot(aes(
-        x = estimate,
-        y = metabolite,
-        xmin = estimate - std.error,
-        xmax = estimate + std.error)) +
-    geom_pointrange()}
+```{r}
+#' Plot the estimates and SD of the model results
+#'
+#' @param results model_estimates
+#'
+#' @return ggplot / forest plot
+#'
+plot_estimates <- function(results) {
+  model_estimates %>%
+    ggplot2::ggplot(ggplot2::aes(
+      x = estimate,
+      y = metabolite,
+      xmin = estimate - std.error,
+      xmax = estimate + std.error
+    )) +
+    ggplot2::geom_pointrange() +
+    ggplot2::coord_fixed(xlim = c(0, 5))
+}
 
-plot_estimates +
-    coord_fixed(xlim = c(0,5))
+plot_estimates
 ```
 
 ## Building the model
@@ -66,7 +76,7 @@ lipidomics %>%
   select(metabolite) %>%
   mutate(term = metabolite) %>%
   column_values_to_snake_case(term) %>%
-  mutate(term = str_c("metabolite_", term)) %>% 
-    distinct(term, metabolite) %>% 
-    right_join(model_estimates, by = "term")
+  mutate(term = str_c("metabolite_", term)) %>%
+  distinct(term, metabolite) %>%
+  right_join(model_estimates, by = "term")
 ```
