@@ -44,7 +44,7 @@ model_estimates <- tar_read(df_model_estimates)
 #' @return ggplot / forest plot
 #'
 plot_estimates <- function(results) {
-  model_estimates %>%
+  results %>%
     ggplot2::ggplot(ggplot2::aes(
       x = estimate,
       y = metabolite,
@@ -54,8 +54,6 @@ plot_estimates <- function(results) {
     ggplot2::geom_pointrange() +
     ggplot2::coord_fixed(xlim = c(0, 5))
 }
-
-plot_estimates
 ```
 
 ## Building the model
@@ -79,4 +77,8 @@ lipidomics %>%
   mutate(term = str_c("metabolite_", term)) %>%
   distinct(term, metabolite) %>%
   right_join(model_estimates, by = "term")
+```
+
+```{r}
+tar_read(fig_model_estimates)
 ```
