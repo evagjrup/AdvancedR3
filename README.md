@@ -9,6 +9,8 @@ TODO: Add more to the title of your project here
 
 # AdvancedR3: An informative course on preventing of common mistakes in collaborations
 
+Check out the project's [website](evagjrup.github.io/AdvancedR3/)
+
 TODO: Give a brief description of what your project is about
 
 This project is about the strengths of collaborating with peers on your
@@ -45,3 +47,4 @@ You'll need to have remotes installed for this to work.
 For more information on this folder and file workflow and setup, check
 out the [prodigenr](https://rostools.github.io/prodigenr) online
 documentation.
+

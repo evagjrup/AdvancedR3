@@ -8,6 +8,9 @@ website:
         text: "Home"
       - href: doc/learning.qmd
         text: "Report"
+  page-footer:
+    center:
+      - text: "License: CC BY 4.0"
 format:
   html:
     theme: simplex
