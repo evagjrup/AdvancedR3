@@ -135,7 +135,7 @@ generate_model_results <- function(data) {
 #'
 #' @return A data frame
 #'
-add_origional_metabolite_names <- function(model_results, data) {
+add_original_metabolite_names <- function(model_results, data) {
   data %>%
     dplyr::mutate(term = metabolite) %>%
     column_values_to_snake_case(term) %>%
