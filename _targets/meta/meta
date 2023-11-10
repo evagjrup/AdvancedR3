@@ -1,5 +1,5 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-.Random.seed|object|3830d3a3ec3685ec|||||||||||||||
+.Random.seed|object|cc4f586f3f4259b8|||||||||||||||
 add_original_metabolite_names|function|ab21d023df5da19e|||||||||||||||
 add_origional_metabolite_names|function|ab21d023df5da19e|||||||||||||||
 calculate_estimates|function|82e7887c386cb1b2|||||||||||||||
@@ -17,6 +17,6 @@ lipidomics|stem|0e1fa6d4e37cc0e3|7940706ee8ea8eb8|81095ade238e5949|-1170387675||
 metabolites_to_wider|function|8eff1105ed5e7f18|||||||||||||||
 plot_distributions|function|0f48d9095a1022c8|||||||||||||||
 plot_estimates|function|e710467c98dca542|||||||||||||||
-quarto_doc|stem|b8697a8f42ae8952|7cedda2f4e176b77|1f408267bd11cd89|1886859688|doc/learning.html*doc/learning.qmd|t19671.4255858139s|82b6017ec350714c|30968|file|local|vector|||5.219||
+quarto_doc|stem|ef16ce2b3324e7f1|7cedda2f4e176b77|1f408267bd11cd89|1886859688|doc/learning.html*doc/learning.qmd|t19671.4311407281s|3df918c196c71502|27770|file|local|vector|||5.136||
 split_by_metabolite|function|a2e9ee2dd226dea7|||||||||||||||
 tidy_model_output|function|4ff0d9127acce476|||||||||||||||

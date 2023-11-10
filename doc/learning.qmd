@@ -1,6 +1,6 @@
 ---
-title: "Draft Quarto document"
-author: "Your Name"
+title: "Advanced R3"
+author: "R3"
 format: html
 editor:
     markdown: 
@@ -37,23 +37,7 @@ model_estimates <- tar_read(df_model_estimates)
 ```
 
 ```{r}
-#' Plot the estimates and SD of the model results
-#'
-#' @param results model_estimates
-#'
-#' @return ggplot / forest plot
-#'
-plot_estimates <- function(results) {
-  results %>%
-    ggplot2::ggplot(ggplot2::aes(
-      x = estimate,
-      y = metabolite,
-      xmin = estimate - std.error,
-      xmax = estimate + std.error
-    )) +
-    ggplot2::geom_pointrange() +
-    ggplot2::coord_fixed(xlim = c(0, 5))
-}
+tar_read(fig_model_estimates)
 ```
 
 ## Building the model
@@ -77,8 +61,4 @@ lipidomics %>%
   mutate(term = str_c("metabolite_", term)) %>%
   distinct(term, metabolite) %>%
   right_join(model_estimates, by = "term")
-```
-
-```{r}
-tar_read(fig_model_estimates)
 ```
