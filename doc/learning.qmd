@@ -1,6 +1,10 @@
 ---
 title: "Advanced R3"
-author: "R3"
+author: 
+- name: Eva
+  affiliations: 
+  - name: Institute for Clinical Medicine, Aarhus University
+  - name: Dept. of Gynaecology and Obstetrics, Aarhus University Hospital
 format: html
 editor:
     markdown: 
@@ -9,6 +13,7 @@ editor:
 ---
 
 ```{r setup}
+#| message: FALSE
 targets::tar_config_set(store = here::here("_targets"))
 library(tidyverse)
 library(targets)
